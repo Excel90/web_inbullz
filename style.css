@@ -1,0 +1,33 @@
+body {
+    background-color: rgb(241, 237, 236);
+    position: absolute;
+    background-image: url("bg_d.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 100%;
+}
+.butterfly img {
+    width: 20vw;
+}
+.butterfly {
+    position: absolute;
+    left: 18vw;
+    top: 3vw;
+}
+.caterpillar img {
+    width: 8vw;
+    transform: rotate(20deg);
+}
+.caterpillar {
+    position: absolute;
+    left: 70vw;
+    top: 15vw;
+}
+.cocoon img {
+    width: 10vw;
+}
+.cocoon {
+    position: absolute;
+    left: 58vw;
+    top: 28vw;
+}
