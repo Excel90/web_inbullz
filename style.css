@@ -31,3 +31,36 @@ body {
     left: 58vw;
     top: 28vw;
 }
+.artikel{
+    /* background-color: rgb(241, 237, 236); */
+    background-attachment: fixed;
+    /* background-position:top;  */
+    background-image: url("bg_d.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 100%;
+    /* background-origin: content-box; */
+
+}
+
+.bgartikel{
+    background-color: rgba(0, 0, 0, 0.5);
+    /* opacity: 50%; */
+    color: white;
+}
+
+.judul h1{
+    /* font-size: 3vw; */
+    font-weight: bold;
+}
+
+.judul h3{
+    /* font-size: 2.5vw; */
+}
+
+.isi{
+    background-color: rgba(0, 0, 0, 0.5);
+    line-height: auto;
+    /* border-radius: 25px; */
+    overflow: auto;
+}
