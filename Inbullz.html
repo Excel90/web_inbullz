@@ -6,26 +6,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mading Inbullz</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        /*hover stuff */
+        .artikel_judul{
+            opacity: 0;
+        }
+        .butterfly:hover .artikel_judul{
+            opacity:1;
+            cursor: pointer;
+        }
+        .butterfly:hover .hide{
+            opacity:0;
+        }
+        .caterpillar:hover .artikel_judul{
+            opacity:1;
+            cursor: pointer;
+        }
+        .caterpillar:hover .hide{
+            opacity:0;
+        }
+        .cocoon:hover .artikel_judul{
+            opacity:1;
+            cursor: pointer;
+        }
+        .cocoon:hover .hide{
+            opacity:0;
+        }
+        /* modal */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fdfdfd00;
+            margin: auto;
+            padding: 20px;
+            width: 80%;
+            border-radius: 2vw;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #020202;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover, .close:focus {
+            color: rgb(216, 43, 43);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+    </style>
+
 
 </head>
 <body>
-    <div class="butterfly">
-        <a href="artikel1.html">
-            <img src="kupu-kupu.png" alt="">
+    <div class="butterfly ">
+        <img src="kupu-kupu.png" alt="" class="hide" >
+        <a class="artikel_judul" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            <img src="kupu-kupu_hover.png" alt="">
         </a>
     </div>
     <div class="caterpillar">
-        <a href="artikel2.html">
-            <img src="caterpillar.png" alt="">
+        <img src="caterpillar.png" alt="" class="hide" >
+        
+        <a href="artikel2.html" class="artikel_judul">
+            <img src="caterpillar_hover.png" alt="">
         </a>
     </div>
     <div class="cocoon">
-        <a href="artikel3.html">
-            <img src="cocoon.png" alt="">
+        <img src="cocoon.png" alt="" class="hide">
+        <a href="artikel3.html" class="artikel_judul">
+            <img src="cocoon_hover.png" alt="">
         </a>
     </div>
-
-    
-    
+        <!-- The Modal -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+            <div class="modal-content">
+        
+                <!-- Modal Header -->
+                <div class="modal-header" style="color: white;">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+        
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img class="d-block w-100" src="kupu-kupu.png" alt="First slide">
+                          </div>
+                          <div class="carousel-item">
+                            <img class="d-block w-100" src="cocoon.png" alt="Second slide">
+                          </div>
+                          <div class="carousel-item">
+                            <img class="d-block w-100" src="caterpillar.png" alt="Third slide">
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                </div>
+        
+                <!-- Modal footer -->
+            </div>
+        </div>
 </body>
 </html>
