@@ -25,3 +25,50 @@ body {
     left: 58vw;
     top: 28vw;
 }
+
+.artikel{
+    /* background-color: rgb(241, 237, 236); */
+    background-attachment: fixed;
+    /* background-position:top;  */
+    /* background-image: url("bg_d.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 100%;
+    /* background-origin: content-box; */
+
+}
+
+.bgartikel{
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    /* opacity: 50%; */
+    color: white;
+}
+
+.artikel h1{
+    font-size: 2.75vw;
+    font-weight: bold;
+}
+
+.artikel h3{
+    font-size: 2vw;
+}
+
+.artikel h4{
+    font-size: 1.75vw;
+}
+
+.artikel h5{
+    font-size: 1.5vw;
+}
+
+.carousel-control-next{
+    left: 100%;
+}
+
+.carousel-control-prev{
+    transform: translateX(-100%);
+}
+
+.isi{
+    margin-top: -2%;
+}
