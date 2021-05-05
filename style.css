@@ -6,6 +6,48 @@ body {
     background-size: cover;
     background-size: 100%;
 }
+/*hover stuff */
+.artikel_judul{
+   display: none;
+}
+.butterfly:hover .artikel_judul{
+    display: block;
+    cursor: pointer;
+}
+.butterfly:hover .hide{
+    display: none;
+}
+.caterpillar:hover .artikel_judul{
+    display: block;
+    cursor: pointer;
+}
+.caterpillar:hover .hide{
+    display: none;
+}
+.cocoon:hover .artikel_judul{
+    display: block;
+    cursor: pointer;
+}
+.cocoon:hover .hide{
+    display: none;
+}
+@media screen and (min-width: 2500px) {
+    .artikel_judul{
+        display: none;
+     }
+     .butterfly:hover .hide{
+         display: block;
+     }
+
+     .caterpillar:hover .hide{
+         display: block;
+     }
+     .cocoon:hover .hide{
+         display: block;
+     }
+}
+
+
 .butterfly img {
     width: 20vw;
     position: absolute;

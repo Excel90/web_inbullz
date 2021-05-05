@@ -10,32 +10,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- OWL CAROSELL -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <style>
-        /*hover stuff */
-        .artikel_judul{
-            opacity: 0;
-        }
-        .butterfly:hover .artikel_judul{
-            opacity:1;
-            cursor: pointer;
-        }
-        .butterfly:hover .hide{
-            opacity:0;
-        }
-        .caterpillar:hover .artikel_judul{
-            opacity:1;
-            cursor: pointer;
-        }
-        .caterpillar:hover .hide{
-            opacity:0;
-        }
-        .cocoon:hover .artikel_judul{
-            opacity:1;
-            cursor: pointer;
-        }
-        .cocoon:hover .hide{
-            opacity:0;
-        }
+
         /* modal */
         .modal {
             display: none; /* Hidden by default */
@@ -83,7 +63,7 @@
 <body>
     <div class="butterfly ">
         <img src="kupu-kupu.png" alt="" class="hide" >
-        <a class="artikel_judul" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        <a class="artikel_judul" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">
             <img src="kupu-kupu_hover.png" alt="">
         </a>
     </div>
@@ -100,23 +80,18 @@
             <img src="cocoon_hover.png" alt="">
         </a>
     </div>
-        <!-- The Modal -->
-        <div class="modal" id="myModal">
-            <div class="modal-dialog">
+    <!-- Large modal -->
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
-        
-                <!-- Modal Header -->
-                <div class="modal-header" style="color: white;">
-                <h5 class="modal-title" id="exampleModalLongTitle">Artikel</h5>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-        
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner text-justify">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+                    <span aria-hidden="true" style="float: right;">&times;</span>
+                </button> 
+                <div class="modal-body text-justify">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
                             <!-- ARTIKEL 1 -->
-                            <div class="carousel-item active bgartikel">
+                            <div class="active bgartikel">
                                 <div class="row artikel">
                                     <div class="col-12">
                                         <center>
@@ -159,11 +134,11 @@
                                         Nah itu dia beberapa gejala dari mutasi B117. Peneliti masih terus melakukan penelitian. Walaupun virus ini ditemukan 50-70% lebih menular dari strain awal, efektivitas vaksin dan risiko komplikasi tetap sama. Semoga informasi ini bermanfaat yaa. Jangan lupa untuk selalu mematuhi protokol, stay safe guys!</h5>
                                     </div>
                                 </div>
-
                             </div>
-
+                        </div>
+                        <div class="item">
                             <!-- ARTIKEL 2 -->
-                            <div class="carousel-item bgartikel">
+                            <div class="bgartikel">
                                 <div class="row artikel">
                                     <div class="col-12">
                                         <center>
@@ -257,9 +232,10 @@
                                     </div>
                                 </div>
                             </div>
-
+                        </div>
+                        <div class="item">
                             <!-- ARTIKEL 3 -->
-                            <div class="carousel-item bgartikel">
+                            <div class="bgartikel">
                                 <div class="row artikel">
                                     <div class="col-12">
                                         <center>
@@ -426,20 +402,23 @@
                                 </div>
                             </div>
                         </div>
-
-                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                      </div>
+                    </div>
                 </div>
-        
-                <!-- Modal footer -->
             </div>
         </div>
+    </div>
+    <script>
+        $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        autoHeight:true,
+        responsive:{
+            0:{
+                items:1
+            },
+        }
+    })
+    </script>
 </body>
 </html>
