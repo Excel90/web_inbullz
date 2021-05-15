@@ -1,0 +1,233 @@
+.wish {
+    font-size: 70px !important;
+}
+
+.wish-card {
+    width: 400px
+}
+
+.card-body {
+    padding: 20px;
+}
+
+body {
+    max-width: 100vw !important;
+    min-height: 100vh !important;
+    background: url('bg_.jpg') no-repeat center center fixed;
+    overflow-x: hidden !important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.card-header {
+    background-color: #164E3f !important;
+    color: #F2F0E7;
+}
+
+#arrowAnim {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -200px;
+    margin-bottom: -100px;
+}
+.arrow {
+    width: 5vw;
+    height: 5vw;
+    border: 1vw solid;
+    border-color: black transparent transparent black;
+    transform: rotate(-135deg);
+}
+.arrowSliding {
+    position: absolute;
+    -webkit-animation: slide 4s linear infinite;
+    animation: slide 4s linear infinite;
+}
+.delay1 {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+.delay2 {
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+.delay3 {
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+}
+
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translatey(-10vw);
+    }
+    20% {
+        opacity: 1;
+        transform: translatey(-4vw);
+    }
+    80% {
+        opacity: 1;
+        transform: translatey(4vw);
+    }
+    100% {
+        opacity: 0;
+        transform: translatey(10vw);
+    }
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translatey(-10vw);
+    }
+    20% {
+        opacity: 1;
+        transform: translatey(-4vw);
+    }
+    80% {
+        opacity: 1;
+        transform: translatey(4vw);
+    }
+    100% {
+        opacity: 0;
+        transform: translatey(10vw);
+    }
+}
+
+@media only screen and (max-width: 999px) {
+    .wish-card {
+        width: 400px !important;
+    }
+}
+
+@media only screen and (max-width: 999px) {
+    .wish-card {
+        width: 300px !important;
+
+    }
+}
+
+@media only screen and (max-width: 767.99px) {
+    .wish {
+        font-size: 80px !important;
+    }
+    .wish-card {
+        width: 300px !important;
+
+    }
+    #arrowAnim{
+        margin-top: -50%!important;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .wish-card {
+        width: 250px !important;
+
+    }
+}
+
+@media only screen and (max-width: 576.99px) {
+    .wish {
+        font-size: 50px !important;
+    }
+    #arrowAnim{
+        margin-top: -50%!important;
+    }
+}
+
+@media only screen and (max-width: 518.99px) {
+    .wish {
+        font-size: 40px !important;
+    }
+    #arrowAnim{
+        margin-top: -55%!important;
+    }
+}
+
+@media only screen and (max-width: 460.99px) {
+    .wish {
+        font-size: 30px !important;
+    }
+    #arrowAnim{
+        margin-top: -60%!important;
+    }
+}
+
+@media only screen and (max-width: 403.99px) {
+    .wish {
+        font-size: 20px !important;
+    }
+    #arrowAnim{
+        margin-top: -75%!important;
+    }
+}
+
+@media only screen and (max-width: 403.99px) {
+    .wish {
+        font-size: 20px !important;
+    }
+    #arrowAnim{
+        margin-top: -80%!important;
+    }
+}
+
+@media only screen and (max-width: 345.99px) {
+    .wish {
+        font-size: 20px !important;
+    }
+    #arrowAnim {
+        margin-top: -85% !important;
+    }
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+@media screen and (max-width: 953px) {
+    .mdlarger {
+        margin-left: 3rem !important;
+        margin-right: 0 !important;
+    }
+}
+@media screen and (max-width: 827px) {
+    .mdlarger {
+        margin-left: 3rem !important;
+        margin-right: 0 !important;
+    }
+}
+@media screen and (max-width: 713px) {
+    .mdlarger {
+        margin-left: 2rem !important;
+        margin-right: 0 !important;
+    }
+}
+@media screen and (max-width: 633px) {
+    .mdlarger {
+        margin-left: 1.25rem !important;
+        margin-right: 0 !important;
+    }
+}
+@media screen and (max-width: 575.5px) {
+    body {
+        background: url("bg_.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}
+.sm-screen:hover {
+    background-color: #F2F0E7;
+}
+.sm-screen:hover a {
+    color: #0D292A !important;
+}
+.font-lg li a {
+    font-size: 30px !important;
+}
