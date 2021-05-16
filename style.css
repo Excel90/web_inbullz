@@ -1,36 +1,72 @@
-body {
-    background-color: rgb(241, 237, 236);
-    position: absolute;
-    background-image: url("bg_d.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+
+.background-video {
     background-size: 100%;
 }
 /*hover stuff */
 .artikel_judul{
    display: none;
 }
-.butterfly:hover .artikel_judul{
+.butterfly:hover .butterfly-hover{
     display: block;
     cursor: pointer;
+}
+.butterfly:not(hover) .butterfly-hover{
+    display: none;
 }
 .butterfly:hover .hide{
     display: none;
 }
-.caterpillar:hover .artikel_judul{
+.caterpillar:hover .caterpillar-hover{
     display: block;
     cursor: pointer;
+}
+.caterpillar:not(hover) .caterpillar-hover{
+    display: none;
 }
 .caterpillar:hover .hide{
     display: none;
 }
-.cocoon:hover .artikel_judul{
+.cocoon:hover .cocoon-hover{
     display: block;
     cursor: pointer;
+}
+.cocoon:not(hover) .cocoon-hover{
+    display: none;
 }
 .cocoon:hover .hide{
     display: none;
 }
+
+.judul-mading:hover .judul-mading-hover{
+    display: block;
+    cursor: pointer;
+}
+.judul-mading:not(hover) .judul-mading-hover{
+    display: none;
+}
+.judul-mading:hover .hide{
+    display: none;
+}
+
+
+.judul-mading img{
+    width: 15vw;
+    position: absolute;
+    right: 5vw; 
+    top: 2vw;
+}
+
+.gamepad:hover .gamepad-hover{
+    display: block;
+    cursor: pointer;
+}
+.gamepad:not(hover) .gamepad-hover{
+    display: none;
+}
+.gamepad:hover .hide{
+    display: none;
+}
+
 @media screen and (min-width: 2500px) {
     .artikel_judul{
         display: none;
@@ -46,7 +82,6 @@ body {
          display: block;
      }
 }
-
 
 .butterfly img {
     width: 20vw;
@@ -65,7 +100,14 @@ body {
     width: 10vw;
     position: absolute;
     left: 58vw;
-    top: 28vw;
+    top: 29vw;
+}
+
+.gamepad img {
+    width: 10vw;
+    position: absolute;
+    right: 5vw;
+    bottom: 2vw;
 }
 
 .artikel{
@@ -76,33 +118,16 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-size: 100%;
+    padding: 2vw;
+    color: white;
     /* background-origin: content-box; */
 
 }
+.artikel img{
+    padding: 2vw;
 
-.bgartikel{
-    /* background-color: rgba(0, 0, 0, 0.5); */
-    /* opacity: 50%; */
-    color: white;
+
 }
-
-.artikel h1{
-    font-size: 2.75vw;
-    font-weight: bold;
-}
-
-.artikel h3{
-    font-size: 2vw;
-}
-
-.artikel h4{
-    font-size: 1.75vw;
-}
-
-.artikel h5{
-    font-size: 1.5vw;
-}
-
 .carousel-control-next{
     left: 100%;
 }
@@ -113,4 +138,33 @@ body {
 
 .isi{
     margin-top: -2%;
+}
+.hidden-div {
+    display: none;
+}
+@media screen and (max-width: 1000px) {
+    .hidden-div {
+        display: block;
+    }
+}
+
+.judul-mading-mobile:hover .judul-mading-hover-mobile{
+    display: block;
+    cursor: pointer;
+}
+.judul-mading-mobile:not(hover) .judul-mading-hover-mobile{
+    display: none;
+}
+.judul-mading-mobile:hover .hide{
+    display: none;
+}
+
+
+.judul-mading-mobile img{
+    width: 50vw;
+    top: 2vw;
+}
+.butterfly-mobile img{
+    width: 50vw;
+    top: 2vw;
 }
