@@ -1,23 +1,22 @@
 <?php
-    // include $_SERVER['DOCUMENT_ROOT']."/web_inbullz-main/database.php";
+    include $_SERVER['DOCUMENT_ROOT']."/web_inbullz-main/database.php";
 
-    // if(isset($_POST['upload_button'])){
+    if(isset($_POST['save_button']) && isset($_POST['note'])){
 
-    //     try{
-    //         $sql = "INSERT INTO kesan_pesan values (default, ?, ?, ?)";
-    //         $stmt = $pdo->prepare($sql);
-    //         $stmt->execute([$_POST['nama'], $_POST['kesan'], $_POST['pesan']]);
-    //     }
-    //     catch(PDOException $e){
-    //         echo $e->getMessage();
-    //     }
-    // }
+        try{
+            $sql = "INSERT INTO notes values (default, ?)";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$_POST['note']]);
+        }
+        catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
 
-    // $sql2 = "SELECT * FROM kesan_pesan";
-    // $stmt2 = $pdo->prepare($sql2);
-    // $stmt2->execute();
+    $sql2 = "SELECT * FROM notes";
+    $stmt2 = $pdo->prepare($sql2);
+    $stmt2->execute();
 ?>
-
 <html>
   <head>
     <meta charset="utf-8">
@@ -32,109 +31,100 @@
 
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="notesStyle.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
-    <!-- <script src="notesScript.js"></script> -->
-
-
   </head>
 
   <body>
-    <div class="main-container">
-      <div class="container1">
-        <button class="btn btn-success" onclick="typeNote()">Add New Note</button>
-      </div>
-      <div class="container2">
-      </div>
-      <div class="container3">
-        <form>
-          <textarea id="note-text" placeholder="Write Note..." maxlength="50%"></textarea>
-          <svg id="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-            <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
-          </svg>
-          <svg id="exit-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-          </svg>
-        </form>
-      </div>
+
+    <div class="row">
+        <div class="col-2">
+        <button class="btn btn-success" onclick="createNote()">Add New Note</button>
+        </div>
+        <div class="col-8 text-center">
+        NOTES
+        </div>
+        <div class="col-2">
+        <a href="Inbullz.php">
+            <img src="caterpillar.png" alt="" width="50%">
+        </a>
+        </div>
     </div>
+    <form action="" method="post">
+        <ul id="list-note">
+        <?php
+            while($isi=$stmt2->fetch()){
+        ?>
+            <li>
+                <a href='#'>
+                    <?php echo $isi['note'] ?>
+                </a>
+            </li>
+        <?php
+            }
+        ?>
+            <button type="submit" class="btn btn-primary" name="save_button" value="Insert">Submit</button>
+
+        <!-- <li>
+            <a href="#" contenteditable>
+            <h2>Title #1</h2>
+            <p>Text Content #1</p>
+            </a>
+        </li>
+        <li>
+            <a href="#" contenteditable>
+            <h2>Title #2</h2>
+            <p>Text Content #2</p>
+            </a>
+        </li>
+        <li>
+            <a href="#" contenteditable>
+            <h2>Title #3</h2>
+            <p>Text Content #3</p>
+            </a>
+        </li>
+        <li> -->
+        </ul>
+    </form>
+    <script src="notesScript.js"></script>
+
   </body>
+  <!-- <script>
+    $(document).ready(function () {
+        all_notes = $("li a");
 
-  <script>
-    var container2 = document.getElementsByClassName("container2")[0];
-    var container3 = document.getElementsByClassName("container3")[0];
-    var checkIcon = document.getElementById("check-icon");
-    var exitIcon = document.getElementById("exit-icon");
-    var i = 0;
+        all_notes.on("keyup", function () {
+            note_title = $(this).find("h2").text();
+            note_content = $(this).find("p").text();
 
-    exitIcon.addEventListener("click", function(){
-      typeNote();
-    })
+            item_key = "list_" + $(this).parent().index();
 
-    checkIcon.addEventListener("click", function(){
-      createNote();
-    })
+            data = {
+            title: note_title,
+            content: note_content
+            };
 
-    function typeNote(){
-      if(container3.style.display == "none"){
-        container3.style.display = "block";
-      }
-      else{
-        container3.style.display = "none";
-      }
-    }
+            window.localStorage.setItem(item_key, JSON.stringify(data));
+        });
 
-    function createNote(){
-      var noteText = document.getElementById("note-text").nodeValue;
-      var node0 = document.createElement("div");
-      var node1 = document.createElement("h1");
+        all_notes.each(function (index) {
+            data = JSON.parse(window.localStorage.getItem("list_" + index));
 
-      node1.innerHTML = noteText;
+            if (data !== null) {
+            note_title = data.title;
+            note_content = data.content;
 
-      node1.setAttribute("style", "width:250px; height:250px; font-size:26px; padding:25px; margin-top:10px; overflow:hidden; box-shadow:0px 10px 24px 0px rgba(0,0,0,0.75)");
+            $(this).find("h2").text(note_title);
+            $(this).find("p").text(note_content);
+            }
+        });
+    });
+  </script> -->
 
-      node1.style.margin = margin();
-      node1.style.transform = rotate();
-      node1.style.background = color();
-      node0.appendChild(node1);
-
-      container2.insertAdjacentElement("beforeend", node0);
-
-      node0.addEventListener("mouseenter", function(){
-        node0.style.transform = "scale(1.1)";
-      })
-
-      node0.addEventListener("mouseleave", function(){
-        node0.style.transform = "scale(1)";
-      })
-
-      node0.addEventListener("dblclick", function(){
-        node0.remove();
-      })
-
-      document.getElementById("note-text").value = '';
-    }
-
-    function margin(){
-      var random_margin = ["-5px", "1px", "5px", "10px", "15px", "20px"];
-      return random_margin[Math.floor(Math.random() * random_margin.length)];
-    }
-    function rotate(){
-      var random_rotate = ["rotate(3deg)", "rotate(1deg)", "rotate(-1deg)", "rotate(-3deg)", "rotate(-5deg)", "rotate(-10deg)"];
-      return random_rotate[Math.floor(Math.random() * random_rotate.length)];
-    }
-    function color(){
-      var random_color = ["#c2ff3d", "#ff3de8", "#3dc2ff", "#04e022", "#bc83e6", "#ebb328"];
-      
-      if(i > random_color.length - 1){
-        i = 0;
-      }
-      return random_color[i++]; 
-    }
-  </script>
+  
 </html>
