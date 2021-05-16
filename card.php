@@ -1,5 +1,5 @@
 <?php
-    include $_SERVER['DOCUMENT_ROOT']."/web_inbullz-main/database.php";
+    include_once "database.php";
 
     if(isset($_POST['upload_button'])){
 

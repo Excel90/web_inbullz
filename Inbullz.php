@@ -85,8 +85,59 @@
                         <img src="asset/cocoon_hover.gif" alt="">
                     </a>
                 </div>
+                <div class="gamepad">
+                    <img src="asset/gamepad.png" alt="" class="hide">
+                    <a class="gamepad-hover" href="">
+                        <img src="asset/gamepad_hover.png" alt="">
+                    </a>
+                </div>
             </div>
         </div>
+        <div class="hidden-div">
+            <div class="row p-md-4">
+                <div class="col-12 text-center border border-primary">
+                    <div class="judul-mading-mobile">
+                        <img src="asset/judul.png" alt="" class="hide" >
+                        <a href="Inbullz.html" class="judul-mading-hover-mobile">
+                            <img src="asset/judul_hover.png" alt=""> 
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center border border-primary">
+                    <div class="butterfly-mobile">
+                        <img src="asset/kupu-kupu.png" alt="" class="hide" >
+                        <a class="butterfly-hover-mobile"type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#butterfly-content">
+                            <img src="asset/kupu-kupu_hover.gif" alt=""> 
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 p-md-5 text-center border border-primary">
+                    <div class="caterpillar-mobile">
+                        <img src="asset/caterpillar.png" alt="" class="hide" >
+                        <a class="caterpillar-hover-mobile" href="notes.php">
+                            <img src="asset/caterpillar_hover.gif" alt=""> 
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 p-md-5 text-center border border-primary">
+                    <div class="cocoon-mobile">
+                        <img src="asset/cocoon.png" alt="" class="hide" >
+                        <a href="card.php" class="cocoon-hover-mobile">
+                            <img src="asset/cocoon_hover.gif" alt=""> 
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 p-md-5 text-center border border-primary">
+                    <div class="gamepad-mobile">
+                        <img src="asset/gamepad.png" alt="" class="hide" >
+                        <a href="" class="gamepad-hover-mobile">
+                            <img src="asset/gamepad_hover.png" alt=""> 
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </div>
 <!-- Modal -->
 <div id="butterfly-content" class="modal fade" role="dialog">
