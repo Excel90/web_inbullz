@@ -27,17 +27,17 @@
         <br>
 
         <!-- no 2 -->
-        <label for="no1">2. Fungsi untuk membersihkan layar console…?</label><br>
+        <label for="no2">2. Fungsi untuk membersihkan layar console…?</label><br>
         <input type="radio" name="no2" value="a">a. Crlsjr<br>
         <input type="radio" name="no2" value="b">b. Clrscr<br>
         <input type="radio" name="no2" value="c">c. Crlscr<br>
         <input type="radio" name="no2" value="d">d. Clrscrn<br>
         <br>
 
-        <button >Submit</button>
+        
     </form>
 
-
+    <button onclick="submit()">Submit</button>
     <script>
 // Set the date we're counting down to
 var countDownDate = new Date().getTime() + 7*60000 + 2*1000;
