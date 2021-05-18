@@ -1,4 +1,5 @@
 function submit(){
+    
     var no1 = ($('input[name=no1]:checked').val());
     var no2 = ($('input[name=no2]:checked').val());
     var no3 = ($('input[name=no3]:checked').val());
@@ -115,10 +116,11 @@ function submit(){
             no50:no50,
         },
         success: function(response){
-            window.location("Inbullz.php")
+            alert("Success");
+            window.location("Inbullz.php");
         },error: function(e){
             //window.location = 'login.html';
             console.log("not success");
         }
-    })
+    });
 }
