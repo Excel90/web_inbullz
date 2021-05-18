@@ -1,0 +1,252 @@
+body{
+    background-image: url('asset/bglogin.jpg');
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+}
+
+.new-beginning .icon {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 20vw;
+  top: 35vh;
+  left: 40vw;
+  animation-name: move;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-delay: 5s;
+  animation-timing-function:ease;
+  transform: scale(2);
+}
+@keyframes move {
+    0% {
+
+      }
+      80% {
+
+        transform: translate(-35vw, -30vh);
+
+      }
+      100% {   
+        
+        transform: translate(-35vw, -30vh);
+
+
+        
+      }
+}
+
+.new-beginning .icon path {
+  fill-opacity: 0;
+  stroke-width: 1;
+  stroke: transparent;
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 0;
+}
+
+.new-beginning .icon .cls-2 {
+  animation: animate-red 5s ease forwards;
+  animation-iteration-count: forwards;
+}
+@keyframes animate-red {
+  0% {
+    stroke-dashoffset: 3000;
+    stroke: red;
+    fill-opacity: 0;
+  }
+  40% {
+    stroke-dashoffset: 1500;
+    stroke: red;
+    fill-opacity: 0;
+  }
+  80% {
+    stroke-dashoffset: 0;
+    stroke: red;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: transparent;
+    fill-opacity: 1;
+  }
+}
+
+.new-beginning .icon .cls-1 {
+  animation: animate-black 5s ease forwards;
+  animation-fill-mode: forwards;
+}
+@keyframes animate-black {
+  0% {
+    stroke-dashoffset: 1500;
+    stroke: black;
+    fill-opacity: 0;
+  }
+  50% {
+    stroke-dashoffset: 500;
+    stroke: black;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: transparent;
+    fill-opacity: 1;
+  }
+}
+
+/* -- sugoi -- */
+
+.sugoi .icon {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 10vw;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-timing-function:ease;
+  transform: translate(85vw, 10vh);
+}
+
+.sugoi .icon path {
+  fill-opacity: 0;
+  stroke-width: 1;
+  stroke: transparent;
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 0;
+}
+
+.sugoi .icon .cls-4 {
+  animation: animate-orange 5s ease forwards;
+  animation-iteration-count: forwards;
+}
+@keyframes animate-orange {
+  0% {
+    stroke-dashoffset: 3000;
+    fill: #f05a28;
+    fill-opacity: 0;
+  }
+  40% {
+    stroke-dashoffset: 1500;
+    fill: #f05a28;
+    fill-opacity: 0;
+  }
+  80% {
+    stroke-dashoffset: 0;
+    fill: #f05a28;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: transparent;
+    fill-opacity: 1;
+  }
+}
+
+.sugoi .icon .cls-3 {
+  animation: animate-white 5s ease forwards;
+  animation-fill-mode: forwards;
+}
+@keyframes animate-white {
+  0% {
+    stroke-dashoffset: 1500;
+    fill: #fff;
+    fill-opacity: 0;
+  }
+  50% {
+    stroke-dashoffset: 500;
+    fill: #fff;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: transparent;
+    fill-opacity: 1;
+  }
+}
+
+/*-- flower -- */
+.flower {
+  width: 50vw;
+  position: absolute;
+  transform: translate( 5vw, 50vh);
+}
+
+@media screen and (max-width: 1250px) {
+  .flower {
+    transform: translate( 0vw, 75vh);
+  }
+}
+@media screen and (max-width: 750px) {
+  .flower {
+    transform: translate( -2vw, 80vh);
+  }
+}
+
+.flower path {
+  fill-opacity: 0;
+  stroke-width: 1;
+  stroke: transparent;
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 0;
+}
+.flower path {
+  animation: animate-flower 5s ease forwards;
+  animation-delay: 1s;
+  animation-iteration-count: forwards;
+}
+@keyframes animate-flower {
+  0% {
+    stroke-dashoffset: 1500;
+    stroke: black;
+    fill-opacity: 0;
+  }
+  40% {
+    stroke-dashoffset: 1500;
+    stroke: black;
+    fill-opacity: 0;
+  }
+  80% {
+    stroke-dashoffset: 1000;
+    stroke: black;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: transparent;
+    fill-opacity: 1;
+  }
+}
+
+/*-- logiinn --*/
+
+.login {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  opacity: 0;
+  transform: translate( 35vw, 30vh);
+  text-align: center;
+  animation-name: animate-login;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+  animation-timing-function:ease;
+}
+.login form{
+  width: 30vw;
+}
+@keyframes animate-login {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+

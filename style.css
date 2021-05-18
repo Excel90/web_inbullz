@@ -1,225 +1,204 @@
-
-.background-video {
-    background-size: 100%;
+.background-image{
+  background-image: url('asset/bg-overlay.jpg');
 }
 /*hover stuff */
-.artikel_judul{
-   display: none;
+.artikel_judul {
+  display: none;
 }
-.butterfly:hover .butterfly-hover{
-    display: block;
-    cursor: pointer;
+.butterfly:hover .butterfly-hover {
+  display: block;
+  cursor: pointer;
 }
-.butterfly:not(hover) .butterfly-hover{
-    display: none;
+.butterfly:not(hover) .butterfly-hover {
+  display: none;
 }
-.butterfly:hover .hide{
-    display: none;
+.butterfly:hover .hide {
+  display: none;
 }
-.caterpillar:hover .caterpillar-hover{
-    display: block;
-    cursor: pointer;
+.caterpillar:hover .caterpillar-hover {
+  display: block;
+  cursor: pointer;
 }
-.caterpillar:not(hover) .caterpillar-hover{
-    display: none;
+.caterpillar:not(hover) .caterpillar-hover {
+  display: none;
 }
-.caterpillar:hover .hide{
-    display: none;
+.caterpillar:hover .hide {
+  display: none;
 }
-.cocoon:hover .cocoon-hover{
-    display: block;
-    cursor: pointer;
+.cocoon:hover .cocoon-hover {
+  display: block;
+  cursor: pointer;
 }
-.cocoon:not(hover) .cocoon-hover{
-    display: none;
+.cocoon:not(hover) .cocoon-hover {
+  display: none;
 }
-.cocoon:hover .hide{
-    display: none;
-}
-
-.judul-mading:hover .judul-mading-hover{
-    display: block;
-    cursor: pointer;
-}
-.judul-mading:not(hover) .judul-mading-hover{
-    display: none;
-}
-.judul-mading:hover .hide{
-    display: none;
+.cocoon:hover .hide {
+  display: none;
 }
 
-
-.judul-mading img{
-    width: 15vw;
-    position: absolute;
-    right: 5vw; 
-    top: 2vw;
+.judul-mading:hover .judul-mading-hover {
+  display: block;
+  cursor: pointer;
+}
+.judul-mading:not(hover) .judul-mading-hover {
+  display: none;
+}
+.judul-mading:hover .hide {
+  display: none;
 }
 
-.gamepad:hover .gamepad-hover{
-    display: block;
-    cursor: pointer;
-}
-.gamepad:not(hover) .gamepad-hover{
-    display: none;
-}
-.gamepad:hover .hide{
-    display: none;
+.judul-mading img {
+  width: 15vw;
+  position: absolute;
+  right: 5vw;
+  top: 2vw;
 }
 
-@media screen and (min-width: 2500px) {
-    .artikel_judul{
-        display: none;
-     }
-     .butterfly:hover .hide{
-         display: block;
-     }
-
-     .caterpillar:hover .hide{
-         display: block;
-     }
-     .cocoon:hover .hide{
-         display: block;
-     }
+.gamepad:hover .gamepad-hover {
+  display: block;
+  cursor: pointer;
+}
+.gamepad:not(hover) .gamepad-hover {
+  display: none;
+}
+.gamepad:hover .hide {
+  display: none;
 }
 
 .butterfly img {
-    width: 20vw;
-    position: absolute;
-    left: 18vw;
-    top: 3vw;
+  width: 20vw;
+  position: absolute;
+  left: 18vw;
+  top: 3vw;
 }
 .caterpillar img {
-    width: 8vw;
-    transform: rotate(20deg);
-    position: absolute;
-    left: 70vw;
-    top: 15vw;
+  width: 8vw;
+  transform: rotate(20deg);
+  position: absolute;
+  left: 70vw;
+  top: 15vw;
 }
 .cocoon img {
-    width: 10vw;
-    position: absolute;
-    left: 58vw;
-    top: 29vw;
+  width: 10vw;
+  position: absolute;
+  left: 58vw;
+  top: 29vw;
 }
 
 .gamepad img {
-    width: 10vw;
-    position: absolute;
-    right: 5vw;
-    bottom: 2vw;
+  width: 10vw;
+  position: absolute;
+  right: 5vw;
+  bottom: 10vw;
 }
 
-.artikel{
-    /* background-color: rgb(241, 237, 236); */
-    background-attachment: fixed;
-    /* background-position:top;  */
-    /* background-image: url("bg_d.jpg"); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-size: 100%;
-    padding: 2vw;
-    color: white;
-    /* background-origin: content-box; */
-
+.artikel {
+  /* background-color: rgb(241, 237, 236); */
+  background-attachment: fixed;
+  /* background-position:top;  */
+  /* background-image: url("bg_d.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 100%;
+  padding: 2vw;
+  color: white;
+  /* background-origin: content-box; */
 }
-.artikel img{
-    padding: 2vw;
-
-
+.artikel img {
+  padding: 2vw;
 }
-.carousel-control-next{
-    left: 100%;
+.carousel-control-next {
+  left: 100%;
 }
 
-.carousel-control-prev{
-    transform: translateX(-100%);
+.carousel-control-prev {
+  transform: translateX(-100%);
 }
 
-.isi{
-    margin-top: -2%;
+.isi {
+  margin-top: -2%;
 }
-.hidden-div {
+.hidden-di-1 {
+  display: none;
+}
+.judul-mading-mobile:hover .judul-mading-hover-mobile {
+  display: block;
+  cursor: pointer;
+}
+.judul-mading-mobile:not(hover) .judul-mading-hover-mobile {
+  display: none;
+}
+.judul-mading-mobile:hover .hide {
+  display: none;
+}
+
+.butterfly-mobile:hover .butterfly-hover-mobile {
+  display: block;
+  cursor: pointer;
+}
+.butterfly-mobile:not(hover) .butterfly-hover-mobile {
+  display: none;
+}
+.butterfly-mobile:hover .hide {
+  display: none;
+}
+
+.caterpillar-mobile:hover .caterpillar-hover-mobile {
+  display: block;
+  cursor: pointer;
+}
+.caterpillar-mobile:not(hover) .caterpillar-hover-mobile {
+  display: none;
+}
+.caterpillar-mobile:hover .hide {
+  display: none;
+}
+
+.cocoon-mobile:hover .cocoon-hover-mobile {
+  display: block;
+  cursor: pointer;
+}
+.cocoon-mobile:not(hover) .cocoon-hover-mobile {
+  display: none;
+}
+.cocoon-mobile:hover .hide {
+  display: none;
+}
+
+.gamepad-mobile:hover .gamepad-hover-mobile {
+  display: block;
+  cursor: pointer;
+}
+.gamepad-mobile:not(hover) .gamepad-hover-mobile {
+  display: none;
+}
+.gamepad-mobile:hover .hide {
+  display: none;
+}
+
+.judul-mading-mobile img {
+  width: 35vw;
+  top: 2vw;
+}
+.butterfly-mobile img {
+  width: 35vw;
+  top: 2vw;
+}
+.caterpillar-mobile img {
+  width: 35vw;
+  top: 2vw;
+}
+.cocoon-mobile img {
+  width: 35vw;
+  top: 2vw;
+}
+.gamepad-mobile img {
+  width: 35vw;
+  top: 2vw;
+}
+
+@media screen and (min-width: 1250px) {
+  .hide-div {
     display: none;
-}
-@media screen and (max-width: 1250px) {
-    .hidden-div {
-        display: block;
-    }
-}
-
-.judul-mading-mobile:hover .judul-mading-hover-mobile{
-    display: block;
-    cursor: pointer;
-}
-.judul-mading-mobile:not(hover) .judul-mading-hover-mobile{
-    display: none;
-}
-.judul-mading-mobile:hover .hide{
-    display: none;
-}
-
-.butterfly-mobile:hover .butterfly-hover-mobile{
-    display: block;
-    cursor: pointer;
-}
-.butterfly-mobile:not(hover) .butterfly-hover-mobile{
-    display: none;
-}
-.butterfly-mobile:hover .hide{
-    display: none;
-}
-
-.caterpillar-mobile:hover .caterpillar-hover-mobile{
-    display: block;
-    cursor: pointer;
-}
-.caterpillar-mobile:not(hover) .caterpillar-hover-mobile{
-    display: none;
-}
-.caterpillar-mobile:hover .hide{
-    display: none;
-}
-
-.cocoon-mobile:hover .cocoon-hover-mobile{
-    display: block;
-    cursor: pointer;
-}
-.cocoon-mobile:not(hover) .cocoon-hover-mobile{
-    display: none;
-}
-.cocoon-mobile:hover .hide{
-    display: none;
-}
-
-.gamepad-mobile:hover .gamepad-hover-mobile{
-    display: block;
-    cursor: pointer;
-}
-.gamepad-mobile:not(hover) .gamepad-hover-mobile{
-    display: none;
-}
-.gamepad-mobile:hover .hide{
-    display: none;
-}
-
-.judul-mading-mobile img{
-    width: 35vw;
-    top: 2vw;
-}
-.butterfly-mobile img{
-    width: 35vw;
-    top: 2vw;
-}
-.caterpillar-mobile img{
-    width: 35vw;
-    top: 2vw;
-}
-.cocoon-mobile img{
-    width: 35vw;
-    top: 2vw;
-}
-.gamepad-mobile img{
-    width: 35vw;
-    top: 2vw;
+  }
 }

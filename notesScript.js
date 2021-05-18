@@ -30,7 +30,7 @@ $(document).ready(function () {
 
 function createNote(){
   document.getElementById("list-note").innerHTML += 
-  "<li><a href='#' contenteditable> <textarea type='text' name='note' id='note' class='form-control' placeholder='Write note'></textarea></a></li>";
+  "<li><a href='#' contenteditable> <textarea type='text' name='note' id='note' class='form-control' placeholder='Write note'></textarea><button type='submit' class='btn btn-primary' name='save_button' value='Insert' style='z-index: 1000;'>Submit</button></a></li> ";
 }
 
 // var container2 = document.getElementsByClassName("container2")[0];

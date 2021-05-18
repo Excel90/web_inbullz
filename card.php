@@ -1,54 +1,57 @@
 <?php
-    include_once "database.php";
-
-    if(isset($_POST['upload_button'])){
-
-        try{
-            $sql = "INSERT INTO kesan_pesan values (default, ?, ?, ?)";
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute([$_POST['nama'], $_POST['kesan'], $_POST['pesan']]);
-        }
-        catch(PDOException $e){
-            echo $e->getMessage();
-        }
-    }
-
-    $sql2 = "SELECT * FROM kesan_pesan";
-    $stmt2 = $pdo->prepare($sql2);
-    $stmt2->execute();
+include_once "database.php";
 ?>
 
 <!DOCTYPE html>
 <html lang='en'>
 
 <head>
-	<!-- <meta charset="UTF-8"> -->
-	<title>Mading Inbullz</title>
+    <!-- <meta charset="UTF-8"> -->
+    <title>Mading Inbullz</title>
     <link rel="stylesheet" href="cardStyle.css">
-
-	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-	<!-- <meta name="msapplication-TileColor" content="#f2f0e7">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://kit.fontawesome.com/9a4ce0d1db.js" crossorigin="anonymous"></script>
+    <!-- <meta name="msapplication-TileColor" content="#f2f0e7">
 	<meta name="theme-color" content="#f2f0e7">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script> -->
-
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+
+    <?php
+
+    if (isset($_POST['upload_button'])) {
+        if ($_POST['nama'] != "" && $_POST['pesan'] != "" && $_POST['kesan'] != "") {
+            try {
+                $sql = "INSERT INTO kesan_pesan values (default, ?, ?, ?)";
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute([$_POST['nama'], $_POST['kesan'], $_POST['pesan']]);
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+            }
+        } else {
+            echo "<script type='text/javascript'>$.alert({title:'Alert!', content:'Tidak Boleh ada yang kosong', type:'red', icon: 'fa fa-warning'});</script>";
+        }
+    }
+    $sql2 = "SELECT * FROM kesan_pesan";
+    $stmt2 = $pdo->prepare($sql2);
+    $stmt2->execute();
+    ?>
 </head>
 
 <body>
-	<div id="main" class="main2">
+    <div id="main" class="main2">
         <div class="row">
-            <div class="col-2"></div>
             <div class="col-8">
                 <div class="card">
                     <div class="card-header">
@@ -72,51 +75,61 @@
                                 <label for="ucapan">ucapan: </label>
                                 <textarea type="text" name="ucapan" id="ucapan" class="form-control" placeholder="Ketik ucapan" disabled></textarea>
                             </div> -->
-                            <button type="submit" class="btn btn-primary" name="upload_button" value="Insert">Submit</button>
+                            <button type="submit" class="btn btn-primary upload-btn" name="upload_button" value="Insert">Submit</button>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="col-2">
-                <a href="Inbullz.html">
-                    <img src="caterpillar.png" alt="" width="50%">
-                </a>
-            </div>
+            <class class="col-4">
+                <div class=" judul-mading">
+                    <img src="asset/judul.png" alt="" class="hide">
+                    <a class="judul-mading-hover" href="Inbullz.php">
+                        <img src="asset/judul_hover.png" alt="">
+                    </a>
+                </div>
+            </class>
+            <a href="Inbullz.html">
+                <img src="caterpillar.png" alt="" width="50%">
+            </a>
         </div>
+    </div>
 
-		<div class="container mx-auto px-0">
-			<div class="row mt-5 justify-content-center mx-0">
-				<div class="col-12 px-0" style="margin-bottom: -5%">
-					<div id="arrowAnim" class="d-none d-sm-flex" style="margin-top: -230px ">
-						<div class="arrowSliding">
-							<div class="arrow"></div>
-						</div>
-						<div class="arrowSliding delay1">
-							<div class="arrow"></div>
-						</div>
-						<div class="arrowSliding delay2">
-							<div class="arrow"></div>
-						</div>
-						<div class="arrowSliding delay3">
-							<div class="arrow"></div>
-						</div>
-					</div>
-					<?php
-                        $count = 0;
-                        while($isi=$stmt2->fetch()){
+    <div class="container mx-auto px-0">
+        <div class="row mt-5 justify-content-center mx-0">
+            <div class="col-12 px-0" style="margin-bottom: -5%">
+                <div class="row">
+                    <div class="col-12" style="width:2vw;">
+                        <div id="arrowAnim" class="d-none d-sm-flex" style="z-index: -10000;">
+                            <div class="arrowSliding">
+                                <div class="arrow"></div>
+                            </div>
+                            <div class="arrowSliding delay1">
+                                <div class="arrow"></div>
+                            </div>
+                            <div class="arrowSliding delay2">
+                                <div class="arrow"></div>
+                            </div>
+                            <div class="arrowSliding delay3">
+                                <div class="arrow"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php
+                $count = 0;
+                while ($isi = $stmt2->fetch()) {
+                ?>
+                    <?php
+                    if ($count % 2 == 0) {
                     ?>
-                        <?php
-                            if($count % 2 == 0){
-                        ?>
                         <div class='card ml-sm-auto mr-sm-5 mx-auto wish-card my-5 my-sm-5' data-aos='fade-left' data-aos-duration='1000'>
                         <?php
-                            }
-                            else{
+                    } else {
                         ?>
-                        <div class='card mr-sm-auto ml-sm-5 mx-auto wish-card my-5 my-sm-5' data-aos='fade-right' data-aos-duration='1000' >
-                        <?php
-                            }
-                        ?>
+                            <div class='card mr-sm-auto ml-sm-5 mx-auto wish-card my-5 my-sm-5' data-aos='fade-right' data-aos-duration='1000'>
+                            <?php
+                        }
+                            ?>
                             <div class='card-header'>
                                 <?php echo $isi['nama'] ?>
                             </div>
@@ -126,13 +139,13 @@
                                 <h4>Pesan :</h4>
                                 <?php echo $isi['pesan'] ?>
                             </div>
-                        </div>
-                    <?php
+                            </div>
+                        <?php
                         $count++;
-                        }
-                    ?>
+                    }
+                        ?>
 
-                    <!-- <div class='card ml-sm-auto mr-sm-5 mx-auto wish-card my-5 my-sm-5' data-aos='fade-left' data-aos-duration='1000'>
+                        <!-- <div class='card ml-sm-auto mr-sm-5 mx-auto wish-card my-5 my-sm-5' data-aos='fade-left' data-aos-duration='1000'>
                         <div class='card-header'>
                             Shania Vanessa Tanain
                             <br>
@@ -182,18 +195,18 @@
                             Thank you for the hardwork ! Stay Positive but don't get positive guys ! :)
                         </div>
                     </div> -->
-                </div>
-			</div>
-		</div>
-	</div>
-	
+                        </div>
+            </div>
+        </div>
+    </div>
 
-	<script>
-		AOS.init();
-		AOS.init({
-			disable: 'mobile'
-		});
-	</script>
+
+    <script>
+        AOS.init();
+        AOS.init({
+            disable: 'mobile'
+        });
+    </script>
 </body>
 
 </html>
