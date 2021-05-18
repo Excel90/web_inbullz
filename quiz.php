@@ -7,8 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-    masuk
     <form>
+        <!-- no 1 -->
+        <label for="no1">1. Otak dari sebuah komputer…?</label><br>
+        <input type="radio" name="no1" value="a">a. Processor<br>
+        <input type="radio" name="no1" value="b">b. Power Supply<br>
+        <input type="radio" name="no1" value="c">c. CPU<br>
+        <input type="radio" name="no1" value="d">d. Motherboard<br>
+        <br>
+
+        <!-- no 2 -->
+        <label for="no1">2. Fungsi untuk membersihkan layar console…?</label><br>
+        <input type="radio" name="no2" value="a">a. Crlsjr<br>
+        <input type="radio" name="no2" value="b">b. Clrscr<br>
+        <input type="radio" name="no2" value="c">c. Crlscr<br>
+        <input type="radio" name="no2" value="d">d. Clrscrn<br>
+        <br>
+
         
     </form>
 </body>
