@@ -30,6 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         exit();
     }
     $_SESSION['user'] = $username;
-    header("Location: ../quiz.php");
+    header("Location: ../sop.php");
 }
 ?>

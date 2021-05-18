@@ -1,4 +1,4 @@
-function submit(){
+function Submit(){
     
     var no1 = ($('input[name=no1]:checked').val());
     var no2 = ($('input[name=no2]:checked').val());
@@ -55,11 +55,66 @@ function submit(){
     var no49 = ($('input[name=no49]:checked').val());
     var no50 = ($('input[name=no50]:checked').val());
 
-    alert(no1 + " "+ no2);
-    ajax({
+    if(no1 == undefined ){ no1 = 'z'; }
+    if(no2 == undefined ){ no2 = 'z'; }
+    if(no3 == undefined ){ no3 = 'z'; }
+    if(no4 == undefined ){ no4 = 'z'; }
+    if(no5 == undefined ){ no5 = 'z'; }
+    if(no6 == undefined ){ no6 = 'z'; }
+    if(no7 == undefined ){ no7 = 'z'; }
+    if(no8 == undefined ){ no8 = 'z'; }
+    if(no9 == undefined ){ no9 = 'z'; }
+    if(no10 == undefined ){ no10 = 'z'; }
+
+    if(no11 == undefined ){ no11 = 'z'; }
+    if(no12 == undefined ){ no12 = 'z'; }
+    if(no13 == undefined ){ no13 = 'z'; }
+    if(no14 == undefined ){ no14 = 'z'; }
+    if(no15 == undefined ){ no15 = 'z'; }
+    if(no16 == undefined ){ no16 = 'z'; }
+    if(no17 == undefined ){ no17 = 'z'; }
+    if(no18 == undefined ){ no18 = 'z'; }
+    if(no19 == undefined ){ no19 = 'z'; }
+    if(no20 == undefined ){ no20 = 'z'; }
+
+    if(no21 == undefined ){ no21 = 'z'; }
+    if(no22 == undefined ){ no22 = 'z'; }
+    if(no23 == undefined ){ no23 = 'z'; }
+    if(no24 == undefined ){ no24 = 'z'; }
+    if(no25 == undefined ){ no25 = 'z'; }
+    if(no26 == undefined ){ no26 = 'z'; }
+    if(no27 == undefined ){ no27 = 'z'; }
+    if(no28 == undefined ){ no28 = 'z'; }
+    if(no29 == undefined ){ no29 = 'z'; }
+    if(no30 == undefined ){ no30 = 'z'; }
+
+    if(no31 == undefined ){ no31 = 'z'; }
+    if(no32 == undefined ){ no32 = 'z'; }
+    if(no33 == undefined ){ no33 = 'z'; }
+    if(no34 == undefined ){ no34 = 'z'; }
+    if(no35 == undefined ){ no35 = 'z'; }
+    if(no36 == undefined ){ no36 = 'z'; }
+    if(no37 == undefined ){ no37 = 'z'; }
+    if(no38 == undefined ){ no38 = 'z'; }
+    if(no39 == undefined ){ no39 = 'z'; }
+    if(no40 == undefined ){ no40 = 'z'; }
+
+    if(no41 == undefined ){ no41 = 'z'; }
+    if(no42 == undefined ){ no42 = 'z'; }
+    if(no43 == undefined ){ no43 = 'z'; }
+    if(no44 == undefined ){ no44 = 'z'; }
+    if(no45 == undefined ){ no45 = 'z'; }
+    if(no46 == undefined ){ no46 = 'z'; }
+    if(no47 == undefined ){ no47 = 'z'; }
+    if(no48 == undefined ){ no48 = 'z'; }
+    if(no49 == undefined ){ no49 = 'z'; }
+    if(no50 == undefined ){ no50 = 'z'; }
+
+    $.ajax({
         method: 'POST',
         url: 'services/submit.php',
-        data: {
+        async: false,
+        data:{
             no1:no1,
             no2:no2,
             no3:no3,
@@ -70,7 +125,6 @@ function submit(){
             no8:no8,
             no9:no9,
             no10:no10,
-
             no11:no11,
             no12:no12,
             no13:no13,
@@ -81,7 +135,6 @@ function submit(){
             no18:no18,
             no19:no19,
             no20:no20,
-
             no21:no21,
             no22:no22,
             no23:no23,
@@ -92,7 +145,6 @@ function submit(){
             no28:no28,
             no29:no29,
             no30:no30,
-
             no31:no31,
             no32:no32,
             no33:no33,
@@ -103,7 +155,6 @@ function submit(){
             no38:no38,
             no39:no39,
             no40:no40,
-
             no41:no41,
             no42:no42,
             no43:no43,
@@ -113,14 +164,17 @@ function submit(){
             no47:no47,
             no48:no48,
             no49:no49,
-            no50:no50,
+            no50:no50
         },
         success: function(response){
             alert("Success");
             window.location("Inbullz.php");
         },error: function(e){
-            //window.location = 'login.html';
+            console.log(e);
             console.log("not success");
+
+            check();
         }
     });
 }
+

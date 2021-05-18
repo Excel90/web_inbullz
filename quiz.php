@@ -1,3 +1,22 @@
+<?php
+
+require_once "database.php";
+if($_SESSION['user'] == null){
+    header("Location: login.php");
+}
+
+$sql = "SELECT * FROM user WHERE nrp = ?";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([$_SESSION['user']]);
+
+$data = $stmt->fetch();
+
+if($data['submit'] == 1){
+        echo "<script>alert('Anda telah mengikuti Kuis')</script>";
+        header("Location: Inbullz.php");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +31,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
     <script src="js/app.js"></script>
     <title>Document</title>
 </head>
@@ -428,7 +448,7 @@
         
     </form>
 
-    <button onclick="submit()">Submit</button>
+    <button onclick="Submit()">Submit</button>
     <script>
 // Set the date we're counting down to
 var countDownDate = new Date().getTime() + 7*60000 + 2*1000;

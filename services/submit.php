@@ -1,7 +1,7 @@
 <?php
 
 require_once "../database.php";
-session_start();
+
 header("Content-Type: application/json");
 
 if($_SERVER['REQUEST_METHOD']=="POST"){
@@ -93,8 +93,8 @@ $kj[30] = 'a';
 $kj[31] = 'c';
 $kj[32] = 'a';
 $kj[33] = 'b';
-$kj[34] = 'e';
-$kj[35] = 'd';
+$kj[34] = 'd';
+$kj[35] = 'c';
 $kj[36] = 'a';
 $kj[37] = 'b';
 $kj[38] = 'a';
@@ -116,6 +116,8 @@ for($i = 0;$i<50;$i++){
         $score++;
     }
 }
+
+$score*=2;
 
 $sql = "UPDATE `user` SET `score`=?,`submit`=1 WHERE `nrp`=?";
 $stmt = $pdo->prepare($sql);
