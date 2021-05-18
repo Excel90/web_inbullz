@@ -65,10 +65,10 @@ if($data['submit'] == 1){
 
  <!-- no 4-->
         <label for="no4">4. Header yang berfungsi untuk membaca file…?</label><br>
-        <input type="radio" name="no4" value="a">a. #include<stream><br>
-        <input type="radio" name="no4" value="b">b. #include<ifstream><br>
-        <input type="radio" name="no4" value="c">c. #include<ofstream><br>
-        <input type="radio" name="no4" value="d">d. #include<fstream><br>
+        <input type="radio" name="no4" value="a">a. #include<span>&#60;</span>stream><br>
+        <input type="radio" name="no4" value="b">b. #include<span>&#60;</span>ifstream><br>
+        <input type="radio" name="no4" value="c">c. #include<span>&#60;</span>ofstream><br>
+        <input type="radio" name="no4" value="d">d. #include<span>&#60;</span>fstream><br>
         <br>       
 
 <!-- no 5 -->
