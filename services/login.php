@@ -3,11 +3,10 @@
 
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = $_POST['nrp'];
 
     function isExist($username, $pdo){
-        $sql = "SELECT * FROM user WHERE username = ?";
+        $sql = "SELECT * FROM user WHERE nrp = ?";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$username]);
 
@@ -19,10 +18,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
             return false;
         }
     }
+
+    function addUser($username, $pdo){
+        $sql = "INSERT INTO `user`(`nrp`) VALUES (?)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$username]);
+    }
+
     if (!isExist($username,$pdo)){
+        addUser($username,$pdo);
         exit();
     }
     $_SESSION['user'] = $username;
-    header("Location: ../Inbullz.php");
+    header("Location: ../quiz.php");
 }
 ?>
