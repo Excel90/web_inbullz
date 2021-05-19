@@ -1,5 +1,6 @@
 .background-image{
   background-image: url('asset/bg-overlay.jpg');
+  background-size: cover;
 }
 /*hover stuff */
 .artikel_judul {
@@ -69,27 +70,27 @@
   width: 20vw;
   position: absolute;
   left: 18vw;
-  top: 3vw;
+  top: 7vw;
 }
 .caterpillar img {
   width: 8vw;
   transform: rotate(20deg);
   position: absolute;
   left: 70vw;
-  top: 15vw;
+  top: 20vw;
 }
 .cocoon img {
   width: 10vw;
   position: absolute;
   left: 58vw;
-  top: 29vw;
+  top: 35vw;
 }
 
 .gamepad img {
   width: 10vw;
   position: absolute;
-  right: 5vw;
-  bottom: 10vw;
+  right: 10vw;
+  bottom: 5vw;
 }
 
 .artikel {

@@ -1,0 +1,57 @@
+.bg-image {
+    position: fixed;
+    size: 100vw 100vh;
+}
+.header {
+    background-color: #7ba4b1 !important;
+    color: #ffffff;
+    padding:10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+.content{
+    background-color: #eaeef0 !important;
+    padding: 1vw;
+    overflow: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.left {
+    margin-top: 100px;
+}
+
+@media screen and (max-width: 600px) {
+    .left {
+        margin-top : 10px;
+    }
+    .right {
+        margin-top : 10px;
+    }
+    
+}
+
+.judul {
+    font-family: 'Pattaya', sans-serif;
+    color: rgb(189, 73, 44);
+}
+
+.judul h1 {
+    font-size: 20vw;
+}
+
+.timer {
+    font-family: 'Pattaya', sans-serif;
+    color: rgb(66, 70, 68);
+    background-color: #eaeef0 !important;
+    padding: 10px;
+    border-radius: 10px;
+    position: fixed;
+    z-index: 10000;
+    height:auto;
+}
+.timer-container {
+    position: absolute;
+    right: 6vw;
+}

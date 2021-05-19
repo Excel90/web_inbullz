@@ -1,6 +1,5 @@
 body{
     background-image: url('asset/bglogin.jpg');
-    position: fixed;
     background-repeat: no-repeat;
     background-size: 100% 100vh;
 }
@@ -20,7 +19,7 @@ body{
   transform: scale(2);
 }
 @keyframes move {
-    0% {
+      0% {
 
       }
       80% {
@@ -96,15 +95,20 @@ body{
 
 /* -- sugoi -- */
 
+.sugoi {
+  position: absolute;
+  right: 0;
+  top: 5vh;
+}
+
 .sugoi .icon {
   display: flex;
   justify-content: center;
-  position: absolute;
   width: 10vw;
   animation-duration: 4s;
   animation-fill-mode: forwards;
   animation-timing-function:ease;
-  transform: translate(85vw, 10vh);
+
 }
 
 .sugoi .icon path {
@@ -171,14 +175,25 @@ body{
   transform: translate( 5vw, 50vh);
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1200px) {
   .flower {
-    transform: translate( 0vw, 75vh);
+    transform: translate( 0vw, 70vh);
+    width: 70vw;
   }
+  .sugoi .icon {
+    width: 20vw;
+
+  }
+
 }
 @media screen and (max-width: 750px) {
   .flower {
     transform: translate( -2vw, 80vh);
+    width: 80vw;
+  }
+  .sugoi .icon {
+    width: 30vw;
+  
   }
 }
 

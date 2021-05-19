@@ -1,5 +1,12 @@
 <?php
+
 include_once "database.php";
+
+if(!isset($_SESSION['username']))
+{
+  header("Location: login.php");
+  exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -30,20 +37,22 @@ include_once "database.php";
 
     <?php
 
-    if (isset($_POST['upload_button'])) {
-        if ($_POST['nama'] != "" && $_POST['pesan'] != "" && $_POST['kesan'] != "") {
-            try {
-                $sql = "INSERT INTO kesan_pesan values (default, ?, ?, ?)";
-                $stmt = $pdo->prepare($sql);
-                $stmt->execute([$_POST['nama'], $_POST['kesan'], $_POST['pesan']]);
-            } catch (PDOException $e) {
-                echo $e->getMessage();
-            }
-        } else {
-            echo "<script type='text/javascript'>$.alert({title:'Alert!', content:'Tidak Boleh ada yang kosong', type:'red', icon: 'fa fa-warning'});</script>";
-        }
-    }
-    $sql2 = "SELECT * FROM kesan_pesan";
+    // if (isset($_POST['upload_button'])) {
+    //     // if ($_SESSION['username'] != "" && $_POST['Kesan'] != "" && $_POST['Pesan'] != "" && $_POST['harapan'] != "") {
+    //     //     try {
+    //     //         $sql = "INSERT INTO kesan_pesan values (default, ?, ?, ?)";
+    //     //         $stmt = $pdo->prepare($sql);
+    //     //         $stmt->execute([$_SESSION['username'], $_POST['kesan'], $_POST['pesan']]);
+    //     //         header("Location: card.php" );
+                
+    //     //     } catch (PDOException $e) {
+    //     //         echo $e->getMessage();
+    //     //     }
+    //     // } else {
+    //     //     echo "<script type='text/javascript'>$.alert({title:'Alert!', content:'Tidak Boleh ada yang kosong', type:'red', icon: 'fa fa-warning'});</script>";
+    //     // }
+    // }
+    $sql2 = "SELECT * FROM kepoinmates";
     $stmt2 = $pdo->prepare($sql2);
     $stmt2->execute();
     ?>
@@ -52,69 +61,20 @@ include_once "database.php";
 <body>
     <div id="main" class="main2">
         <div class="row">
-            <div class="col-8">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Masukkan Pesan dan Kesan</h3>
-                    </div>
-                    <div class="card-body">
-                        <form action="" method="post">
-                            <div class="form-group">
-                                <label for="nama">Nama: </label>
-                                <input type="text" name="nama" id="nama" class="form-control" placeholder="Ketik Nama"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="kesan">Kesan: </label>
-                                <textarea type="text" name="kesan" id="kesan" class="form-control" placeholder="Ketik Kesan"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="pesan">Pesan: </label>
-                                <textarea type="text" name="pesan" id="pesan" class="form-control" placeholder="Ketik Pesan"></textarea>
-                            </div>
-                            <!-- <div class="form-group">
-                                <label for="ucapan">ucapan: </label>
-                                <textarea type="text" name="ucapan" id="ucapan" class="form-control" placeholder="Ketik ucapan" disabled></textarea>
-                            </div> -->
-                            <button type="submit" class="btn btn-primary upload-btn" name="upload_button" value="Insert">Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <class class="col-4">
+            <div class="offset-1 col-2">
                 <div class=" judul-mading">
-                    <img src="asset/judul.png" alt="" class="hide">
-                    <a class="judul-mading-hover" href="Inbullz.php">
-                        <img src="asset/judul_hover.png" alt="">
+                    <img src="asset/judul.png" alt="" class="hide" style="z-index: 1000;">
+                    <a class="judul-mading-hover" href="index.php">
+                        <img src="asset/judul_hover.png" alt="" style="z-index: 1000;">
                     </a>
                 </div>
-            </class>
-            <a href="Inbullz.html">
-                <img src="caterpillar.png" alt="" width="50%">
-            </a>
+            </div>
         </div>
     </div>
 
     <div class="container mx-auto px-0">
         <div class="row mt-5 justify-content-center mx-0">
             <div class="col-12 px-0" style="margin-bottom: -5%">
-                <div class="row">
-                    <div class="col-12" style="width:2vw;">
-                        <div id="arrowAnim" class="d-none d-sm-flex" style="z-index: -10000;">
-                            <div class="arrowSliding">
-                                <div class="arrow"></div>
-                            </div>
-                            <div class="arrowSliding delay1">
-                                <div class="arrow"></div>
-                            </div>
-                            <div class="arrowSliding delay2">
-                                <div class="arrow"></div>
-                            </div>
-                            <div class="arrowSliding delay3">
-                                <div class="arrow"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <?php
                 $count = 0;
                 while ($isi = $stmt2->fetch()) {
@@ -134,10 +94,12 @@ include_once "database.php";
                                 <?php echo $isi['nama'] ?>
                             </div>
                             <div class='card-body'>
-                                <h4>Kesan :</h4>
+                                <h4>Adakah keluh kesah selama pembelajaran online? ceritakan donk!</h4>
                                 <?php echo $isi['kesan'] ?>
-                                <h4>Pesan :</h4>
+                                <h4>Kalau disuruh memilih, apakah kamu memilih kuliah online atau offline? </h4>
                                 <?php echo $isi['pesan'] ?>
+                                <h4>Apa harapanmu kedepannya untuk dirimu?</h4>
+                                <?php echo $isi['harapan'] ?>
                             </div>
                             </div>
                         <?php

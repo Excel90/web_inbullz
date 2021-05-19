@@ -1,0 +1,37 @@
+.text .icon {
+    width: 400px;
+    margin: auto;
+}
+.text path {
+    fill-opacity: 0;
+    stroke-width: 1;
+    stroke: black;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+}
+.text path {
+    animation: animate-text 5s ease forwards;
+    animation-iteration-count: forwards;
+}
+@keyframes animate-text {
+    0% {
+      stroke-dashoffset: 1000;
+      stroke: black;
+      fill-opacity: 0;
+    }
+    40% {
+      stroke-dashoffset: 1000;
+      stroke: black;
+      fill-opacity: 0;
+    }
+    80% {
+      stroke-dashoffset: 750;
+      stroke: black;
+      fill-opacity: 0;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      stroke: transparent;
+      fill-opacity: 1;
+    }
+  }
